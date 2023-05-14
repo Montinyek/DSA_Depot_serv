@@ -68,6 +68,6 @@ app.delete(`/${deleteSnippet}/:id`, (req, res) => {
         .catch(err => res.status(500))
 })
 
-app.listen(3001, () => {
+app.listen(PORT, () => {
     console.log(`Server is running on port ${PORT}`)
 })
