@@ -3,18 +3,19 @@ const { ObjectId } = require('mongodb')
 const cors = require('cors')
 const mongoose = require('mongoose')
 const app = express()
+require('dotenv').config()
 
 const SnippetModel = require('./model')
 
 app.use(express.json())
 app.use(cors())
 
-require('dotenv').config();
-
 const newSnippet = process.env.NEW_SNIPPET
 const updateSnippet = process.env.UPDATE_SNIPPET
 const deleteSnippet = process.env.DELETE_SNIPPET
 const connection = process.env.DB_CONNECTION
+
+console.log(connection)
 
 const PORT = process.env.PORT || 3001
 
