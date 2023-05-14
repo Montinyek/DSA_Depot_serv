@@ -15,7 +15,10 @@ const newSnippet = process.env.REACT_APP_NEW_SNIPPET
 const updateSnippet = process.env.REACT_APP_UPDATE_SNIPPET
 const deleteSnippet = process.env.REACT_APP_DELETE_SNIPPET
 
-mongoose.connect("mongodb+srv://user371:mongodb371@cluster0.l849qe3.mongodb.net/dsa_depot?retryWrites=true&w=majority", {
+const connection = process.env.DB_CONNECTION
+const PORT = process.env.PORT || 3001
+
+mongoose.connect(connection, {
     useNewUrlParser: true
 })
 
@@ -66,5 +69,5 @@ app.delete(`/${deleteSnippet}/:id`, (req, res) => {
 })
 
 app.listen(3001, () => {
-    console.log("Server is running")
+    console.log(`Server is running on port ${PORT}`)
 })
