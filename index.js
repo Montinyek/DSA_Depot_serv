@@ -13,6 +13,7 @@ app.use(cors())
 const connection = process.env.DB_CONNECTION
 const PORT = process.env.PORT || 3001
 
+const password = process.env.ADMIN_PW
 const newSnippet = process.env.NEW_SNIPPET
 const updateSnippet = process.env.UPDATE_SNIPPET
 const deleteSnippet = process.env.DELETE_SNIPPET
@@ -38,7 +39,7 @@ app.get('/latest', (req, res) => {
     SnippetModel.find().then(result => {res.send(result[result.length - 1])}).catch(err => console.log(err))
 })
 
-app.post('/login', authLogin("Dsadepot"), (req, res) => {
+app.post('/login', authLogin(`${password}`), (req, res) => {
     res.send({ newSnippet, updateSnippet, deleteSnippet })
 })
 
