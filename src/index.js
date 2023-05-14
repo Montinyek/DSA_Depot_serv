@@ -36,7 +36,7 @@ app.get('/', (req, res) => {
 })
 
 app.get('/latest', (req, res) => {
-    SnippetModel.find().then(result => {console.log(result[result.length - 1]); res.send(result[result.length - 1])}).catch(err => console.log(err))
+    SnippetModel.find().then(result => {res.send(result[result.length - 1])}).catch(err => console.log(err))
 })
 
 app.post('/login', authLogin("Dsadepot"), (req, res) => {
