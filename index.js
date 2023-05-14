@@ -15,8 +15,6 @@ const updateSnippet = process.env.UPDATE_SNIPPET
 const deleteSnippet = process.env.DELETE_SNIPPET
 const connection = process.env.DB_CONNECTION
 
-console.log(connection)
-
 const PORT = process.env.PORT || 3001
 
 mongoose.connect(connection, {
