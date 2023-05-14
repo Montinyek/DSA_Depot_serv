@@ -11,11 +11,11 @@ app.use(cors())
 
 require('dotenv').config();
 
-const newSnippet = process.env.REACT_APP_NEW_SNIPPET
-const updateSnippet = process.env.REACT_APP_UPDATE_SNIPPET
-const deleteSnippet = process.env.REACT_APP_DELETE_SNIPPET
-
+const newSnippet = process.env.NEW_SNIPPET
+const updateSnippet = process.env.UPDATE_SNIPPET
+const deleteSnippet = process.env.DELETE_SNIPPET
 const connection = process.env.DB_CONNECTION
+
 const PORT = process.env.PORT || 3001
 
 mongoose.connect(connection, {
