@@ -10,12 +10,12 @@ const SnippetModel = require('./model')
 app.use(express.json())
 app.use(cors())
 
+const connection = process.env.DB_CONNECTION
+const PORT = process.env.PORT || 3001
+
 const newSnippet = process.env.NEW_SNIPPET
 const updateSnippet = process.env.UPDATE_SNIPPET
 const deleteSnippet = process.env.DELETE_SNIPPET
-const connection = process.env.DB_CONNECTION
-
-const PORT = process.env.PORT || 3001
 
 mongoose.connect(connection, {
     useNewUrlParser: true
