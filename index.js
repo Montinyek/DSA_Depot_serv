@@ -32,7 +32,7 @@ const authLogin = (password) => {
 }
 
 app.get('/', (req, res) => {
-    SnippetModel.find().then(result => res.send(result)).catch(err => console.log(err))
+    SnippetModel.find().then(result => res.send(result.reverse())).catch(err => console.log(err))
 })
 
 app.get('/latest', (req, res) => {
